@@ -1,5 +1,10 @@
 package com.rat.hacker;
 
+/**
+ * @author Bar771
+ * https://Bar771.tumblr.com
+ */
+
 import java.net.Socket;
 import java.net.ServerSocket;
 import java.io.BufferedReader;
