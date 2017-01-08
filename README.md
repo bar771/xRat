@@ -11,11 +11,11 @@ The RAT(Remote Admin Tool) is Windows compatible, not cross-platform.
 - Able to see the processes in the background on the remote pc.
 - exit command, disconnecting.
 - Able to terminate processes in the background.
+- Able to control the mouse movement.
 
 # Changelog:
 - Not yet.
 
 # Todo:
-- Remote mouse control.
 - Keylogging.
 - Files Encryption\Decryption.
