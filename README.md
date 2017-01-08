@@ -1,6 +1,6 @@
 # xRat
-xRat is the perfect tool for trolling your friends ;)
-The RAT(Remote Admin Tool) is a Windows OS compatible, not cross-platform.
+xRat is the perfect tool for trolling your friends ;)<br/>
+The RAT(Remote Admin Tool) is Windows compatible, not cross-platform.
 
 # Features:
 - Open a uri via Internet Explorer.
