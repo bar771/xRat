@@ -16,4 +16,6 @@ The RAT(Remote Admin Tool) is a Windows OS compatible, not cross-platform.
 - Not yet.
 
 # Todo:
-- Soon.
+- Remote mouse control.
+- Keylogging.
+- Files Encryption\Decryption.
