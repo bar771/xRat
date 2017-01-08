@@ -10,7 +10,6 @@ import java.net.InetAddress;
 import java.awt.Toolkit;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
-import java.io.File;
 import java.io.InputStream;
 
 import java.awt.Rectangle;
@@ -26,6 +25,8 @@ class Client extends Thread{
 	private BufferedReader in;
 	private PrintWriter out;
 	private InetAddress addr;
+	
+	private Robot r;
 	
 	private boolean isRunning = false;
 	
@@ -44,6 +45,12 @@ class Client extends Thread{
 		isRunning = true;
 		this.socket = socket;
 		this.addr = socket.getInetAddress();
+		
+		try {
+			this.r = new Robot();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@Override
@@ -79,7 +86,6 @@ class Client extends Thread{
 				}
 				// Screenshot.
 				else if (line.startsWith("screenshot")) {
-					Robot r = new Robot();
 					Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
 					BufferedImage img = r.createScreenCapture(screenRect);
 					int[] rgb = img.getRGB(0, 0, img.getWidth(), img.getHeight(), null, 0, img.getWidth());
@@ -111,8 +117,15 @@ class Client extends Thread{
 					byte[] buffer = new byte[1000];
 					input.read(buffer, 0, buffer.length);
 					String msg = new String(buffer);
-					out.println(msg);
+					out.println(msg.trim());
 					out.flush();
+				}
+				// Move the mouse to some coordinate.
+				else if (line.startsWith("mouse") && line.split(" ").length > 1) {
+					int xMouse = Integer.parseInt(line.split(" ")[1]);
+					int yMouse = Integer.parseInt(line.split(" ")[2]);
+					r.mouseMove(xMouse, yMouse);
+					System.out.println("[" + id + "] Moved the mouse to " + xMouse +"," + yMouse + " coordinate.");
 				}
 				// log the user out.
 				else if (line.startsWith("exit")) {

