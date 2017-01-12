@@ -19,3 +19,7 @@ The RAT(Remote Admin Tool) is Windows compatible, not cross-platform.
 # Todo:
 - Keylogging.
 - Files Encryption\Decryption.
+- Files Transferring.
+
+# Licence
+Apache 2.0
