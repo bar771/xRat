@@ -20,6 +20,7 @@ The RAT(Remote Admin Tool) is Windows compatible, not cross-platform.
 - Keylogging.
 - Files Encryption\Decryption.
 - Files Transferring.
+- Port forwarding using weupnp lib (http://bitletorg.github.io/weupnp/).
 
 # Licence
 Apache 2.0
